@@ -1,0 +1,43 @@
+{
+    "wallet": {
+        "address": "<WALLET NAME>",
+        "encryptedWalletPath": "./w.json",
+        "password": "<SEED PASSWORD>"
+    },
+
+    "maxQuestGroupSize": 6,
+    "pollingInterval": 100000,
+    "questAttempts": 5,
+    "consumeStaminaVialIfMinStamina": 25,
+
+    "quests-backup": [
+        {
+            "name": "Agility-Stat",
+            "professionHeroes": [76568],
+            "contractAddress": "0x801b7296f106d8818da1d04ed769e5a76e8911fe",
+            "level": 1
+        }
+    ],
+
+    "quests": [
+        {
+            "name": "Intelligence-Stat",
+            "professionHeroes": [76568],
+            "contractAddress": "0xd8ccf866959830a8e397442b5f7ddd790f230962",
+            "level": 1
+        }
+    ],
+
+    "itemContract": "0xc9A9F352Aa188f422A8f8902B547FB3E59D37210",
+    "questContract": "0xE9AbfBC143d7cef74b5b793ec5907fa62ca53154",
+    "heroContract": "0xEb9B61B145D6489Be575D3603F4a704810e143dF",
+
+    "useBackupRpc": false,
+    "rpc": {
+        "DFKRpc": "https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc",
+        "poktRpc": "https://avax-dfk.gateway.pokt.network/v1/lb/6244818c00b9f0003ad1b619//ext/bc/q2aTwKuyzgs8pynF7UXBZCU7DejbZbZ6EUyHr3JQzYgwNPUPi/rpc"
+    },
+
+    "gasPrice": 30000000000,
+    "gasLimit": 5000000
+}
