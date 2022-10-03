@@ -1,4 +1,4 @@
-If you're finding DFKQuestRunner valuable, give this repository a "Star" on github.
+If you're finding DFKQuestRunner valuable, give this repository a "Star" on github. Thx!
 
 # --- Security Policy ---
 
