@@ -1,5 +1,6 @@
-# --- Security Policy ---
+If you're finding DFKQuestRunner valuable, give this repository a "Star" on github.
 
+# --- Security Policy ---
 
 Please make yourself aware of the risks by reading through the Private Key section below. This is very important!
 
@@ -20,7 +21,7 @@ Features:
 -   Logs all quest activity to the screen, including quest rewards/XP/SkillUps
 -   Can be configured to log to a file, for people who don't sit in front of a screen all day :)
 -   Can run locally on your main machine, or can be deployed to a server
--   Easy to switch to the POKT RPC network if Harmony RPC has issues
+-   Easy to switch to the Backup RPC network if AVAX RPC has issues
 -   Unlocks 'locked' quests - sometimes heroes get stuck on a quest and it can't be cancelled or completed through the DFK UI. DFKQuestRunner will attempt to complete these locked quests
 
 # Private Keys - Proceed with EXTREME CAUTION!
@@ -61,7 +62,7 @@ If you're wanting to get your hands dirty with the source code and maybe contrib
 -   Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 -   Create a folder for the source code, navigate to the folder in your terminal of choice, and clone the DFKQuestRunner repo into it
 
-`git clone https://github.com/SansegoTek/DFKQuestRunner.git`
+`git clone https://github.com/BlockJayn/DFKQuestRunner-AVAX.git`
 
 -   Navigate into the repo folder and install the application dependencies
 
@@ -86,6 +87,7 @@ Configuration is handled in `config.json`. You need to rename the "config-SAMPLE
 wallet
  - address - your 0x wallet address used with Defi Kingdoms
  - encryptedWalletPath - the file path to your encrypted primary key file. This defaults to a file called "w.json" in the root of the source code, but can be changed to e.g. point to a location on a secure USB drive
+ - password - the password you are using to decrypt your seed phrase
 
 professionMaxAttempts - the number of attempts that your professional heroes (e.g. fishers on a fishing quest) should try
 nonProfessionMaxAttempts - the number of attempts that your non-professional heroes (e.g. miners on a foraging quest) should try
@@ -98,7 +100,7 @@ quests
    - professionHeroes - Comma-separated list of the Ids of the professional heros that you are sending on this quest. Make sure the heroes profession matches the quests profession
    - nonProfessionHeroes - Comma-separated list of the Ids of the non-professional heroes that you are sending on this quest. Make sure the heroes profession doesn't match the quests profession
 
-useBackupRpc - false to use the Harmony RPC, true to use the POKT RPC when Harmony RPC has issues
+useBackupRpc - false to use the AVAX RPC, true to use the Backup RPC when AVAX RPC has issues
 ```
 
 # Running
@@ -114,6 +116,8 @@ Assuming your terminal is still in the DFKQuestRunner folder, run the app using:
 Enter your password, and if you are running it for the first time, export your private key from MetaMask, and enter it into the app when prompted.
 
 The app will loop indefinitely, checking for quests to start or complete every interval defined by the `pollingInterval` config entry
+
+I strongly recommend using "PM2" to run the script, instead of `npm start` (after starting it the first time with "npm start" to do the setup). If there are problems with the transaction or the script crashes for some reasons, "PM2" will automatically restart the script. You can find the commands to PM2 in "PM2-Commands-Readme.txt". In order to use PM2 you need to copy your "w.json" file into the folder "src/runner, as PM2 will look for the file in this folder instead of the root folder.
 
 # Using with DeFi Kingdoms App
 
