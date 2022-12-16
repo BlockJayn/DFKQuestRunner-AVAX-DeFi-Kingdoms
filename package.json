@@ -6,7 +6,8 @@
     "dependencies": {
         "axios": "^0.26.1",
         "bluebird": "^3.7.2",
-        "ethers": "^5.5.2"
+        "ethers": "^5.5.2",
+        "pm2": "^5.2.2"
     },
     "scripts": {
         "start": "node .",
